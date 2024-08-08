@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
 </head>
 <body>
     <!-- <h1>CustomURL</h1> -->
@@ -31,7 +31,7 @@
     const url = document.getElementById('url').value;
     const key = document.getElementById('key').value;
 
-    fetch('http://localhost:3000/api/url', {  // Update this with your actual endpoint
+    fetch('http://localhost:3000/api/url', { 
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -46,7 +46,7 @@
         return response.json();
     }).then(data => {
         document.getElementById('result').style.display = 'block';
-        document.getElementById('result').textContent = 'Short URL: ' + data.id; // Customize as needed
+        document.getElementById('result').textContent = 'Short URL:http://localhost:3000/api/' + data.id; // Customize as needed
     }).catch(error => {
         console.error('Error:', error);
         document.getElementById('result').style.display = 'block';

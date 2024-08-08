@@ -46,7 +46,7 @@
         return response.json();
     }).then(data => {
         document.getElementById('result').style.display = 'block';
-        document.getElementById('result').textContent = 'Short URL:http://localhost:3000/api/' + data.id; // Customize as needed
+        document.getElementById('result').textContent = 'Short URL:https://customurl-9d2h.onrender.com/api/' + data.id; // Customize as needed
     }).catch(error => {
         console.error('Error:', error);
         document.getElementById('result').style.display = 'block';

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- <h1>CustomURL</h1> -->
+    <form action="" id="urlForm">
+        <div>
+            <!-- <label for="url">Enter URL:</label> -->
+            <input type="url" id="url" name="url" required placeholder="Enter URL">
+        </div>
+        <br>
+        <div>
+            <!-- <label for="key">Custom Key (optional):</label> -->
+            <input type="text" id="key" name="key" placeholder="Custom Key (optional)">
+        </div>
+        <br>
+        <button type="submit">Generate Short URL</button>
+    </form>
+    <br>
+    <div id="result"></div>
+
+
+    <script>
+   document.getElementById('urlForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const url = document.getElementById('url').value;
+    const key = document.getElementById('key').value;
+
+    fetch('http://localhost:3000/api/url', {  // Update this with your actual endpoint
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ url: url, key: key })
+    }).then(response => {
+        if (response.status === 409) {
+            return response.json().then(data => {
+                throw new Error(data.message);
+            });
+        }
+        return response.json();
+    }).then(data => {
+        document.getElementById('result').style.display = 'block';
+        document.getElementById('result').textContent = 'Short URL: ' + data.id; // Customize as needed
+    }).catch(error => {
+        console.error('Error:', error);
+        document.getElementById('result').style.display = 'block';
+        document.getElementById('result').textContent = error.message;
+    });
+});
+
+    </script>
+</body>
+</html> 

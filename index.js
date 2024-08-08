@@ -33,6 +33,9 @@ connectToMongoDB()
 //Routes
 app.use("/api", urlRoute)
 
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/client/index.html');
+});
 
 
 app.listen(PORT, () => {

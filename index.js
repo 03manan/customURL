@@ -7,10 +7,11 @@ require('dotenv').config();
 
 const app = express()
 // const allowedOrigins = ['http://localhost:5500', 'http://127.0.0.1:5500'];
-const allowedOrigins = ['https://customurl-9d2h.onrender.com'];
+// const allowedOrigins = ['https://customurl-9d2h.onrender.com'];
 // app.use(cors({
-//     origin: 'http://localhost:5500'  // Allow only requests from this origin
+//     origin: 'process.env.CORS_ORIGIN_DEV'  // Allow only requests from this origin
 //   }));
+const allowedOrigins = process.env.CORS_ORIGIN_DEV.split(',');
 app.use(cors({
     origin: function (origin, callback) {
         if (!origin) return callback(null, true);
@@ -26,7 +27,7 @@ app.use(cors({
 app.use(express.json());
 
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 //DB Connection
 connectToMongoDB()

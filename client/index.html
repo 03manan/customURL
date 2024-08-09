@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
 </head>
 <body>
     <!-- <h1>CustomURL</h1> -->
@@ -31,7 +31,8 @@
     const url = document.getElementById('url').value;
     const key = document.getElementById('key').value;
 
-    fetch('https://customurl-9d2h.onrender.com/api/url', { 
+    fetch('http://localhost:3000/api/url', { 
+    // fetch('https://customurl-9d2h.onrender.com/api/url', {  for deployement 
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -46,7 +47,8 @@
         return response.json();
     }).then(data => {
         document.getElementById('result').style.display = 'block';
-        document.getElementById('result').textContent = 'Short URL:https://customurl-9d2h.onrender.com/api/' + data.id; // Customize as needed
+        // document.getElementById('result').textContent = 'Short URL:https://customurl-9d2h.onrender.com/api/' + data.id;  deployment
+        document.getElementById('result').textContent = 'Short URL:http://localhost:3000/api/' + data.id; //  developement
     }).catch(error => {
         console.error('Error:', error);
         document.getElementById('result').style.display = 'block';

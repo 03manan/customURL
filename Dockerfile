@@ -1,4 +1,4 @@
-FROM node:14
+FROM node:18
 WORKDIR /usr/src/app
 
 COPY package*.json ./
@@ -11,7 +11,7 @@ COPY . .
 ENV PORT 3000
 ENV MONGO_URI=your_mongodb_connection_string
 
-EXPOSE 3000
+EXPOSE 3000 5500
 CMD ["node", "index.js"]
 
 

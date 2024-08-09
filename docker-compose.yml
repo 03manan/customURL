@@ -12,7 +12,7 @@ services:
        PORT: 3000
       #  CORS_ORIGIN_DEV1: "http://127.0.0.1:5500"
       #  CORS_ORIGIN_DEV2: "http://localhost:5500"
-       CORS_ORIGIN_DEV: ${CORS_ORIGIN_DEV}
+       CORS_ORIGIN_DEV: "http://127.0.0.1:5500,http://localhost:5500"
        CORS_ORIGIN_DEP: "https://customurl-9d2h.onrender.com"
        API_BASE_URL: "http://localhost:3000"
     depends_on:

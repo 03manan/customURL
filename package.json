@@ -4,9 +4,9 @@
   "description": "A website that lets you create custom urls for any website.",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently \"nodemon index.js\" \"http-server -p 8080\"",
+    "dev": "concurrently \"nodemon index.js\" \"npx http-server ./client -p 8080 --cors",
     "start-backend": "nodemon index.js",
-    "start-frontend": "http-server -p 8080"},
+    "start-frontend": "npx http-server ./client -p 8080 --cors"},
   "author": "Manan Khanna",
   "license": "ISC",
   "dependencies": {

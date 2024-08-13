@@ -106,7 +106,9 @@ You can run both the frontend and backend simultaneously using:
 $ npm run dev
 ```
 Backend: Runs on port 3000.
+
 Frontend: Runs on port 8080 using http-server.
+
 Navigate to http://localhost:8080 to access the frontend.
 
 
@@ -174,8 +176,10 @@ To run the application using Docker Compose, use the following command:
 docker-compose up --build
 
 ```
-   a) Backend: Accessible at http://localhost:3000.
-   b) Frontend: Accessible at http://localhost:8080.
+Backend: Accessible at http://localhost:3000.
+
+Frontend: Accessible at http://localhost:8080.
+
 This setup will automatically start both the application and the MongoDB service, exposing ports 3000 (for the backend) and 8080 (for the frontend).
 
 ### 9. Docker Hub and GitHub Actions

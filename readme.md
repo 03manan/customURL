@@ -76,7 +76,7 @@ Navigate to http://localhost:8080 to access the frontend.
 #### 1. Access the Application: 
 1. Backend: http://localhost:3000
 2. Frontend: http://localhost:8080
-3. 
+
 This setup will automatically start both the application and the MongoDB service, exposing ports 3000 (for the backend) and 8080 (for the frontend)
 
 ### Usage

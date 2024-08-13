@@ -22,7 +22,7 @@ A web application that allows users to create custom shortened URLs for any webs
    - **Description:** Creates a custom or random shortened URL.
 
 2. **Redirect to Long URL**
-   - **Endpoint:** `/:key`
+   - **Endpoint:** `/:customURL`
    - **Method:** `GET`
    - **Description:** Redirects to the original URL using the shortened key.
 

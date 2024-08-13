@@ -4,17 +4,21 @@
   "description": "A website that lets you create custom urls for any website.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js"
-  },
+    "dev": "concurrently \"nodemon index.js\" \"http-server -p 8080\"",
+    "start-backend": "nodemon index.js",
+    "start-frontend": "http-server -p 8080"},
   "author": "Manan Khanna",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "http-server": "^14.1.1",
     "mongoose": "^8.5.2",
     "nodemon": "^3.1.4",
     "shortid": "^2.2.16"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
   }
 }
